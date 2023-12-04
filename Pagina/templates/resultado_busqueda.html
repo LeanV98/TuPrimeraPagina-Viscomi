@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="hero-no-slider" class="d-flex justify-cntent-center align-items-center">
+    <div class="container position-relative aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <h2>RESULTADOS DE LA BÚSQUEDA</h2>
+                <br>
+                <h3 style="color: white;"> Resultados para el curso '{{ nombre_curso }}' :</h3>
+                <br>
+                <ul>
+                    {% for curso in cursos %}
+                        <li><h4 style="color: white;">{{ curso.comision }}</h4></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>    
+</section>
+
+{% endblock %}
+
+{% block footer %}
+    <div>
+        <a href="/buscar_curso/"><h4>Realizar Nueva Busqueda</h4></a>
+        
+    </div>
+{% endblock %}
